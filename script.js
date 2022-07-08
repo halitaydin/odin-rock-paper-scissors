@@ -13,9 +13,6 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection === null) {
-    return "Cancelled";
-  }
   const player = playerSelection.toLowerCase();
 
   if (player === "rock" || player === "paper" || player === "scissors") {
@@ -41,18 +38,29 @@ function playRound(playerSelection, computerSelection) {
       return "Draw";
     }
   } else {
-    return "You have to make a choice!";
+    console.log("wasted");
+    computerScore += 1;
   }
 }
 
-function playerSelection() {
+function playerPlay() {
   return prompt("Choose one of them: Rock | Paper | Scissors");
 }
-const computerSelection = computerPlay;
+const computerSelection = computerPlay();
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    console.log(playRound(playerSelection(), computerSelection()));
+    const playerSelection = playerPlay();
+
+    if (playerSelection !== null && playerSelection !== "") {
+      console.log(playRound(playerSelection, computerSelection));
+    } else if (playerSelection === "") {
+      return console.log("You have to make a choice!");
+    } else if (playerSelection === null) {
+      return console.log("Cancelled");
+    } else {
+      return console.log("test");
+    }
   }
   if (playerScore > computerScore) {
     console.log("Final Result: You Win!");
@@ -62,4 +70,5 @@ function game() {
     console.log("Final Result: Draw");
   }
 }
+
 game();
