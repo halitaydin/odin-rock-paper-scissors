@@ -15,31 +15,26 @@ let computerScore = 0;
 function playRound(playerSelection, computerSelection) {
   const player = playerSelection.toLowerCase();
 
-  if (player === "rock" || player === "paper" || player === "scissors") {
-    if (player === "rock" && computerSelection === "paper") {
-      computerScore += 1;
-      return "You Lose! Paper beats Rock";
-    } else if (player === "rock" && computerSelection === "scissors") {
-      playerScore += 1;
-      return "You Win! Rock beats Scissors";
-    } else if (player === "paper" && computerSelection === "rock") {
-      playerScore += 1;
-      return "You Win! Paper beats Rock";
-    } else if (player === "paper" && computerSelection === "scissors") {
-      computerScore += 1;
-      return "You Lose! Scissors beats Paper";
-    } else if (player === "scissors" && computerSelection === "rock") {
-      computerScore += 1;
-      return "You Lose! Rock beats Scissors";
-    } else if (player === "scissors" && computerSelection === "paper") {
-      playerScore += 1;
-      return "You Win! Scissors beats Paper";
-    } else {
-      return "Draw";
-    }
-  } else {
-    console.log("wasted");
+  if (player === "rock" && computerSelection === "paper") {
     computerScore += 1;
+    return "You Lose! Paper beats Rock";
+  } else if (player === "rock" && computerSelection === "scissors") {
+    playerScore += 1;
+    return "You Win! Rock beats Scissors";
+  } else if (player === "paper" && computerSelection === "rock") {
+    playerScore += 1;
+    return "You Win! Paper beats Rock";
+  } else if (player === "paper" && computerSelection === "scissors") {
+    computerScore += 1;
+    return "You Lose! Scissors beats Paper";
+  } else if (player === "scissors" && computerSelection === "rock") {
+    computerScore += 1;
+    return "You Lose! Rock beats Scissors";
+  } else if (player === "scissors" && computerSelection === "paper") {
+    playerScore += 1;
+    return "You Win! Scissors beats Paper";
+  } else {
+    return "Draw";
   }
 }
 
@@ -53,15 +48,24 @@ function game() {
     const playerSelection = playerPlay();
 
     if (playerSelection !== null && playerSelection !== "") {
-      console.log(playRound(playerSelection, computerSelection));
+      const playerChoice = playerSelection.toLowerCase();
+
+      if (
+        playerChoice === "rock" ||
+        playerChoice === "paper" ||
+        playerChoice === "scissors"
+      ) {
+        console.log(playRound(playerSelection, computerSelection));
+      } else {
+        return console.log("Invalid choice");
+      }
     } else if (playerSelection === "") {
       return console.log("You have to make a choice!");
-    } else if (playerSelection === null) {
-      return console.log("Cancelled");
     } else {
-      return console.log("test");
+      return console.log("Cancelled");
     }
   }
+
   if (playerScore > computerScore) {
     console.log("Final Result: You Win!");
   } else if (playerScore < computerScore) {
