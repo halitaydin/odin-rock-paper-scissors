@@ -38,41 +38,27 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function playerPlay() {
-  return prompt("Choose one of them: Rock | Paper | Scissors");
-}
-const computerSelection = computerPlay();
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+const round = document.getElementById('round');
+const result = document.getElementById('result');
+
+rock.addEventListener('click', game);
+paper.addEventListener('click', game);
+scissors.addEventListener('click', game);
+
+let counter = 0;
 
 function game() {
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = playerPlay();
-
-    if (playerSelection !== null && playerSelection !== "") {
-      const playerChoice = playerSelection.toLowerCase();
-
-      if (
-        playerChoice === "rock" ||
-        playerChoice === "paper" ||
-        playerChoice === "scissors"
-      ) {
-        console.log(playRound(playerSelection, computerSelection));
-      } else {
-        return console.log("Invalid choice");
-      }
-    } else if (playerSelection === "") {
-      return console.log("You have to make a choice!");
-    } else {
-      return console.log("Cancelled");
-    }
-  }
+    counter += 1;
+    round.textContent = `Round: ${counter}`;
 
   if (playerScore > computerScore) {
-    console.log("Final Result: You Win!");
+    result.textContent = "Final Result: You Win!"
   } else if (playerScore < computerScore) {
-    console.log("Final Result: You Lose!");
+    result.textContent ="Final Result: You Lose!"
   } else {
-    console.log("Final Result: Draw");
+    result.textContent = "Final Result: Draw";
   }
 }
-
-game();
