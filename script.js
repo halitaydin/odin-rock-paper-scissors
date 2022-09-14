@@ -32,31 +32,41 @@ const play = (e) => {
     counter += 1;
     if (playerSelection === "rock" && computerSelection === "paper") {
       computerScore += 1;
-      lastAction.textContent = "Last Action: Paper beats Rock";
+      lastAction.textContent =
+        "Last Action: Paper vs Rock --> Paper beats Rock";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
       playerScore += 1;
-      lastAction.textContent = "Last Action: Rock beats Scissors";
+      lastAction.textContent =
+        "Last Action: Rock vs Scissors --> Rock beats Scissors";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
       playerScore += 1;
-      lastAction.textContent = "Last Action: Paper beats Rock";
+      lastAction.textContent =
+        "Last Action: Paper vs Rock --> Paper beats Rock";
     } else if (
       playerSelection === "paper" &&
       computerSelection === "scissors"
     ) {
       computerScore += 1;
-      lastAction.textContent = "Last Action: Scissors beats Paper";
+      lastAction.textContent =
+        "Last Action: Scissors vs Paper --> Scissors beats Paper";
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
       computerScore += 1;
-      lastAction.textContent = "Last Action: Rock beats Scissors";
+      lastAction.textContent =
+        "Last Action: Rock vs Scissors --> Rock beats Scissors";
     } else if (
       playerSelection === "scissors" &&
       computerSelection === "paper"
     ) {
       playerScore += 1;
-      lastAction.textContent = "Last Action: Scissors beats Paper";
+      lastAction.textContent =
+        "Last Action: Scissors vs Paper --> Scissors beats Paper";
     } else {
       drawScore += 1;
-      lastAction.textContent = "Last Action: Draw";
+      lastAction.textContent = `Last Action: ${
+        playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)
+      } vs ${
+        computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)
+      } --> Draw`;
     }
   }
 
