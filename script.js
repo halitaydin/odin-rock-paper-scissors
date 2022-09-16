@@ -16,7 +16,6 @@ let drawScore = 0;
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
-const round = document.getElementById("round");
 const player = document.getElementById("playerScore");
 const computer = document.getElementById("computerScore");
 const draw = document.getElementById("drawScore");
@@ -102,7 +101,6 @@ reset.addEventListener("click", () => {
   rock.addEventListener("click", play);
   paper.addEventListener("click", play);
   scissors.addEventListener("click", play);
-  round.textContent = `Round: 0`;
   player.textContent = `Player: 0`;
   computer.textContent = `Computer: 0`;
   draw.textContent = `Draw: 0`;
