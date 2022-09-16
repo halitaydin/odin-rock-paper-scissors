@@ -12,7 +12,6 @@ function computerPlay() {
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
-let counter = 0;
 
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
@@ -28,8 +27,7 @@ const play = (e) => {
   const playerSelection = e.target.textContent.toLowerCase();
   const computerSelection = computerPlay();
 
-  if (counter < 5) {
-    counter += 1;
+  if (playerScore < 5 || computerScore < 5) {
     if (playerSelection === "rock" && computerSelection === "paper") {
       computerScore += 1;
       lastAction.textContent =
@@ -70,7 +68,7 @@ const play = (e) => {
     }
   }
 
-  if (counter === 5) {
+  if (playerScore === 5 || computerScore === 5) {
     if (playerScore > computerScore) {
       result.textContent = "Final Result: You Win!";
     } else if (playerScore < computerScore) {
@@ -79,9 +77,11 @@ const play = (e) => {
       result.textContent = "Final Result: Draw";
     }
     btn.style.display = "block";
+    rock.removeEventListener("click", play);
+    paper.removeEventListener("click", play);
+    scissors.removeEventListener("click", play);
   }
 
-  round.textContent = `Round: ${counter}`;
   player.textContent = `Player: ${playerScore}`;
   computer.textContent = `Computer: ${computerScore}`;
   draw.textContent = `Draw: ${drawScore}`;
@@ -99,13 +99,15 @@ btn.style.display = "none";
 
 const reset = document.getElementById("reset");
 reset.addEventListener("click", () => {
+  rock.addEventListener("click", play);
+  paper.addEventListener("click", play);
+  scissors.addEventListener("click", play);
   round.textContent = `Round: 0`;
   player.textContent = `Player: 0`;
   computer.textContent = `Computer: 0`;
   draw.textContent = `Draw: 0`;
   lastAction.textContent = "Last Action: ";
   result.textContent = "Final Result: ";
-  counter = 0;
   playerScore = 0;
   computerScore = 0;
   drawScore = 0;
