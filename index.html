@@ -4,19 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <h1>Rock Paper Scissors Game</h1>
-    <h3>Get 5 Points</h3>
-    <div id="playerScore">Player: 0</div>
-    <div id="computerScore">Computer: 0</div>
-    <div id="drawScore">Draw: 0</div>
-    <div id="lastAction">Last Action:</div>
-    <div id="result">Final Result:</div>
-    <button id="rock">Rock</button>
-    <button id="scissors">Scissors</button>
-    <button id="paper">Paper</button>
+    <div id="main">
+      <section class="header">
+        <h1>Rock Paper Scissors Game</h1>
+        <h3>Get 5 Points</h3>
+        <div id="playerScore">Player: 0</div>
+        <div id="computerScore">Computer: 0</div>
+        <div id="drawScore">Draw: 0</div>
+        <div id="lastAction">Last Action:</div>
+        <div id="result">Final Result:</div>
+      </section>
+      <div id="hand-icons">
+        <div id="rock" class="icons">
+          <img src="./images/rock-icon.svg" alt="rock" />
+        </div>
+        <div id="paper" class="icons">
+          <img src="./images/paper-icon.svg" alt="paper" />
+        </div>
+        <div id="scissors" class="icons">
+          <img src="./images/scissors-icon.svg" alt="scissors" />
+        </div>
+      </div>
+      <button id="reset" class="reset">Play Again!</button>
+      <a
+        class="vector"
+        href="https://www.vecteezy.com/vector-art/690792-rock-paper-scissors-hand-icons"
+        >Rock Paper Scissors Vectors by Vecteezy</a
+      >
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

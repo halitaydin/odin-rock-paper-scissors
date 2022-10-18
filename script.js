@@ -23,7 +23,7 @@ const lastAction = document.getElementById("lastAction");
 const result = document.getElementById("result");
 
 const play = (e) => {
-  const playerSelection = e.target.textContent.toLowerCase();
+  const playerSelection = e.target.alt;
   const computerSelection = computerPlay();
 
   if (playerScore < 5 || computerScore < 5) {
@@ -90,10 +90,7 @@ rock.addEventListener("click", play);
 paper.addEventListener("click", play);
 scissors.addEventListener("click", play);
 
-let btn = document.createElement("button");
-btn.id = "reset";
-btn.textContent = "Reset";
-document.body.appendChild(btn);
+let btn = document.querySelector(".reset");
 btn.style.display = "none";
 
 const reset = document.getElementById("reset");

@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #26006e;
+    color: yellowgreen;
+    font-family: monospace;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+#hand-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icons {
+    width: 100%;
+    margin: 30px;
+    cursor: pointer;
+}
+
+#main {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* From uiverse.io */
+button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: fit-content;
+    margin: auto;
+  }
+  
+  button:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  button:active {
+    transform: translateY(-1px);
+  }
+  
+  button:focus {
+    background-color: black;
+    color: #fff;
+  }
