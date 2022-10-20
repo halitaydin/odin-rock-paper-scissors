@@ -71,7 +71,6 @@ p {
 }
 
 #result {
-  color: #ff206e;
   font-size: 40px;
   margin-top: 10px;
   animation: blinker 1.5s linear infinite;

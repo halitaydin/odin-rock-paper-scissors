@@ -63,8 +63,10 @@ const play = (e) => {
 
   if (playerScore === 5 || computerScore === 5) {
     if (playerScore > computerScore) {
+      result.style.color = '#fff'
       result.textContent = "You Win!";
     } else if (playerScore < computerScore) {
+      result.style.color = '#f22626'
       result.textContent = "You Lose!";
     } else {
       result.textContent = "Draw";
