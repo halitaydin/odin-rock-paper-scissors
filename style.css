@@ -9,7 +9,7 @@
   padding: 0;
   background-color: #26006e;
   font-size: 30px;
-  font-family: "ledBoard";
+  font-family: "ledBoard", sans-serif;
   touch-action: manipulation;
 }
 
